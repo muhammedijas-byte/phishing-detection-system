@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Background -->
+    <div class="bg-gradient"></div>
+
+    <!-- Result Card -->
+    <div class="container glass-card">
+
+        <h1 class="title">🔍 URL Analysis Result</h1>
+
+        <div class="url-box">
+            <span>Analyzed URL</span>
+            <p>{{ url }}</p>
+        </div>
+
+        <!-- Prediction -->
+        <div class="result-card {{ 'phishing' if prediction|string in ['phishing','1'] else 'legit' }}">
+            <h2 class="result-title">
+                {% if prediction|string in ['phishing','1'] %}
+                    ⚠️ Phishing Website Detected
+                {% else %}
+                    ✅ Legitimate Website
+                {% endif %}
+            </h2>
+
+            {% if probability is not none %}
+            <p class="confidence">
+                Confidence Score:
+                <b>{{ (probability * 100) | round(2) }}%</b>
+            </p>
+            {% endif %}
+        </div>
+
+        <!-- Decision Reason -->
+        <div class="info-box">
+            <p>
+                <strong>Decision Mode:</strong> {{ reason }}
+            </p>
+        </div>
+
+        <!-- Feature Explanation -->
+        {% if features %}
+        <div class="features-section">
+            <h3>📊 Extracted URL Features</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Value</th>
+                            <th>Interpretation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for k, v in features.items() %}
+                        <tr>
+                            <td>{{ k }}</td>
+                            <td>{{ "%.4f"|format(v) }}</td>
+                            <td>
+                                {% if v > 0 %}
+                                    <span class="tag danger">Suspicious</span>
+                                {% else %}
+                                    <span class="tag safe">Normal</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% else %}
+        <div class="info-box muted">
+            Feature analysis skipped (trusted or whitelisted domain).
+        </div>
+        {% endif %}
+
+        <!-- Back Button -->
+        <div class="actions">
+            <a href="{{ url_for('index') }}" class="back-btn">← Analyze Another URL</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            Final Year Project – AI Phishing Detection using <b>SLA-FS++</b>
+        </p>
+    </footer>
+
+</body>
+</html>

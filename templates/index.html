@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Phishing Detection</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Background -->
+    <div class="bg-gradient"></div>
+
+    <!-- Main Card -->
+    <div class="container glass-card">
+
+        <h1 class="title">🔐 AI-Powered Phishing Detection</h1>
+        <p class="subtitle">
+            Analyze any website URL and determine whether it is
+            <span class="safe-text">Legitimate</span> or
+            <span class="danger-text">Phishing</span>
+        </p>
+
+        <!-- URL Form -->
+        <form method="POST" class="url-form">
+            <input
+                type="text"
+                name="url"
+                placeholder="https://example.com"
+                required
+                class="url-input"
+            >
+            <button type="submit" class="analyze-btn">
+                Analyze URL
+            </button>
+        </form>
+
+        <!-- Result Section -->
+        {% if result %}
+        <div class="result-card {{ 'phishing' if result == 'PHISHING' else 'legit' }}">
+            <h2 class="result-title">
+                {{ '⚠️ Phishing Website Detected' if result == 'PHISHING' else '✅ Legitimate Website' }}
+            </h2>
+            <p class="confidence">
+                Confidence Score: <b>{{ probability }}</b>
+            </p>
+        </div>
+
+        <!-- Feature Table -->
+        <div class="features-section">
+            <h3>🔍 URL Feature Analysis</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for key, value in features.items() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            Final Year Project – AI Phishing Detection using <b>SLA-FS++</b>
+        </p>
+    </footer>
+
+</body>
+</html>

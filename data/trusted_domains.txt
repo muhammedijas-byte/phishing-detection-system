@@ -1,0 +1,104 @@
+# ---------------- AI / OPENAI ----------------
+openai.com
+chatgpt.com
+chat.openai.com
+
+# ---------------- GOOGLE / ALPHABET ----------------
+google.com
+gmail.com
+youtube.com
+docs.google.com
+drive.google.com
+maps.google.com
+accounts.google.com
+
+# ---------------- MICROSOFT ----------------
+microsoft.com
+office.com
+outlook.com
+live.com
+azure.com
+teams.microsoft.com
+
+# ---------------- APPLE ----------------
+apple.com
+icloud.com
+itunes.apple.com
+
+# ---------------- AMAZON ----------------
+amazon.com
+amazon.in
+aws.amazon.com
+primevideo.com
+
+# ---------------- META ----------------
+facebook.com
+instagram.com
+whatsapp.com
+messenger.com
+
+# ---------------- DEVELOPER PLATFORMS ----------------
+github.com
+gitlab.com
+bitbucket.org
+stackoverflow.com
+
+# ---------------- SOCIAL / PROFESSIONAL ----------------
+linkedin.com
+twitter.com
+x.com
+
+# ---------------- STREAMING ----------------
+netflix.com
+spotify.com
+hotstar.com
+
+# ---------------- INTERNATIONAL PAYMENTS ----------------
+paypal.com
+visa.com
+mastercard.com
+americanexpress.com
+
+# ---------------- UPI / DIGITAL PAYMENTS (INDIA) ----------------
+upi.gov.in
+npci.org.in
+paytm.com
+phonepe.com
+googlepay.com
+bhimupi.org.in
+
+# ---------------- INDIAN GOVERNMENT ----------------
+gov.in
+india.gov.in
+nic.in
+kerala.gov.in
+
+# ---------------- EDUCATION ----------------
+ktu.edu.in
+ugc.ac.in
+aicte-india.org
+nptel.ac.in
+
+# ---------------- INDIAN BANKS (PUBLIC) ----------------
+sbi.co.in
+onlinesbi.sbi
+bankofbaroda.in
+pnbindia.in
+canarabank.com
+unionbankofindia.co.in
+onlinesbi.sbi.bank.in
+sbi.bank.in
+
+
+# ---------------- INDIAN BANKS (PRIVATE) ----------------
+hdfcbank.com
+icicibank.com
+axisbank.com
+kotak.com
+indusind.com
+yesbank.in
+
+# ---------------- extra ----------------
+lenovo.com
+
+
