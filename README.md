@@ -18,6 +18,16 @@ This project detects phishing websites using Machine Learning and Explainable AI
 
 ## Model Accuracy
 96%
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/home.png)
+
+### Prediction Result
+![Result](screenshots/result.png)
+
+### Confusion Matrix
+![CONFUSION MATRIX](screenshots/confusion.png)
 
 ## How to Run
 
